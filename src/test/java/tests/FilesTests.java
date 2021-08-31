@@ -18,9 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FilesTests {
@@ -71,10 +69,9 @@ public class FilesTests {
         ZipFile zipFile = new ZipFile(filePath, arcPassword.toCharArray());
         zipFile.extractAll(filesExtractPath);
 
-        File dir = new File(filesExtractPath); 
+        File dir = new File(filesExtractPath);
         File[] arrFiles = dir.listFiles();
         List<File> filesList = Arrays.asList(arrFiles);
         assertTrue(filesList.toString().contains("Hello zip.txt"));
-
     }
 }
